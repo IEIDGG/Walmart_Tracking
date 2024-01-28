@@ -101,7 +101,7 @@ try:
     formatted_start_date = start_date.strftime("%d-%b-%Y")
 
     status, messages = mail.search(None,
-                                   f'(FROM "alertspoiler00.93@gmail.com" SUBJECT "Shipped" SINCE "{formatted_start_date}")')
+                                   f'(FROM "help@walmart.com" SUBJECT "Shipped" SINCE "{formatted_start_date}")')
     messages = messages[0].split(b' ')
 
     with open('OrderDetails.csv', mode='w', newline='', encoding='utf-8') as file:
