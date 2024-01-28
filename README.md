@@ -1,6 +1,8 @@
 # Walmart_Tracking
 Finds Walmart trackings from email
 
+For this script, you need to install BeautifulSoup4 library
+
 Make sure to put all these files into the same folder
 
 You can change the credentials for the Gmail in credentials.txt
