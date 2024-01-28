@@ -11,4 +11,4 @@ Put your email and app password in credentials.txt
 
 You can change the date it searches from by changing the values on the main file
 
-Line 94 has the date it searches from and it goes by Year, Month, Day
+It can be changed in this line: start_date = datetime.date(2024, 1, 1)  # Year, Month, Day
