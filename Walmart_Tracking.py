@@ -3,6 +3,7 @@ import email
 from bs4 import BeautifulSoup
 import csv
 import datetime
+import re
 
 
 def extract_details(email_html):
@@ -40,6 +41,12 @@ def extract_details(email_html):
             address_divs = soup.find_all('p', style='margin:0')
             if len(address_divs) >= 3:
                 return address_divs[2].get_text().strip()
+            address4 = soup.find_all('span', style='color:#2E2F32;font-size:16px !important;font-weight:400 !important;')
+            for element in address4:
+                text = element.get_text()
+                zip_code = re.findall(r'\b\d{5}\b', text)
+                if zip_code:
+                    return text
             return 'Failed to retrieve address'
 
         return find_tracking_numbers(), find_order_date(), find_order_number(), find_address()
